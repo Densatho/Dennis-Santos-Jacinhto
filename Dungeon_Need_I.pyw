@@ -1,6 +1,7 @@
 import tkinter as tk
 from Vsaves import VerificadorSaves
 import Menu_Inicial
+from PIL import Image
 
 
 class DungeonNeedI:
@@ -20,8 +21,11 @@ class DungeonNeedI:
 
         fonte_padrao = ("Arial", "10", "bold")
 
-        im = tk.Canvas(app, width=2000, height=1100)
-        imagem = tk.PhotoImage(file="img\\1.png")
+        im = tk.Canvas(app, width=config[2][:-1], height=config[3][:-1])
+        imagem = Image.open("img\\1.png")
+        imagem = imagem.resize((int(config[2][:-1]), int(config[3][:-1])), Image.ANTIALIAS)
+        imagem.save("img\\1re.ppm")
+        imagem = tk.PhotoImage(file="img\\1re.ppm")
         painel = im.create_image(0, 0, image=imagem, anchor=tk.NW)
         im.lower(painel)
         im.pack()

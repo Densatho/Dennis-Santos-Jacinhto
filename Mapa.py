@@ -14,7 +14,7 @@ class Mapa:
         self.fontPadrao = fontpadrao
         self.p = p
         self.mp = mp
-        mpa = [{'PT': 'Planície', 'EN': 'Plain'},
+        mpa = [{'PT': 'Planície', 'EN': 'Plains'},
                {'PT': 'Pântano\n(Nv5 recomendado)', 'EN': 'Swamp\n(Lv5 recommended)'},
                {'PT': 'Caverna\n(Nv10 recomendado)', 'EN': 'Cave\n(Lv10 recommended)'},
                {'PT': 'Savana\n(Nv20 recomendado)', 'EN': 'Savanna\n(Lv20 recommended)'},

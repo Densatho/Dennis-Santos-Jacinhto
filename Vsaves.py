@@ -1,9 +1,14 @@
 import os
+import ctypes
 
 
 class VerificadorSaves:
 
     def __init__(self):
+
+        user32 = ctypes.windll.user32
+        screensize = user32.GetSystemMetrics(0), user32.GetSystemMetrics(1)
+
         try:
             open("saves\\Slot 1.svt", 'r')
         except FileNotFoundError:
@@ -40,6 +45,6 @@ class VerificadorSaves:
             open("config.svtg", 'r')
         except IOError:
             arq = open('config.svtg', 'w')
-            txt = ['fullscreen\n', 'EN\n']
+            txt = ['fullscreen\n', 'EN\n', f'{screensize[0]}\n', f'{screensize[1]}\n']
             arq.writelines(txt)
             arq.close()
